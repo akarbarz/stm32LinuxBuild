@@ -143,3 +143,16 @@
 		max-speed = <3000000>;
 	};
 };
+
+&i2c5 {
+	status = "okay";
+	clock-frequency = <100000>;
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&i2c5_pins_a>;
+	pinctrl-1 = <&i2c5_pins_sleep_a>;
+
+	pressure@76 {
+		compatible = "bosch,bme280";
+		reg = <0x76>;
+	};
+};
